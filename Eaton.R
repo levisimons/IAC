@@ -140,7 +140,7 @@ WHP_points <- as.data.frame(terra::extract(region_WHP,Parcel_subset,method="simp
 colnames(WHP_points) <- c("WHP")
 
 #Get elevation data.
-elevation_input <- elevation_3s(mean(st_bbox(study_area)[1],st_bbox(study_area)[1]),mean(st_bbox(study_area)[2],st_bbox(study_area)[4]),path=".")
+elevation_input <- elevation_3s(mean(st_bbox(study_area)[1],st_bbox(study_area)[3]),mean(st_bbox(study_area)[2],st_bbox(study_area)[4]),path=".")
 #Clip elevation to study area.
 region_elevation <- crop(elevation_input,study_area)
 region_elevation <- mask(region_elevation,study_area)
