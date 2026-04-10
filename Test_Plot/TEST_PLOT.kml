@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>TEST_PLOT</name>
+	<StyleMap id="__managed_style_3B1F062C463C7229F87E">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_44224EA1FE3C7229F87E</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_5C071F6F173C7229F87E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_44224EA1FE3C7229F87E">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0000ff</color>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_2A8264E9E73C7229F87E">
+		<Style>
+			<IconStyle>
+				<scale>1.32</scale>
+				<Icon>
+					<href>data:image/png;base64,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</href>
+				</Icon>
+				<hotSpot x="20" y="62" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1928D3C8243C7229F87E">
+		<Style>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAM4klEQVR4nNWae3BU133HP/furrQSKwk9WfRE0QMbEBHgENJSwDEGZBhBUsD2JGamzNQwnTZ1Q13GuFM3pmBsZpy4dsdu45nETB3XlrCJI14uYILMwxaIhzEUgUCSEWglLdJqn/fuvff0j6vF4ADalXYx/s6c2Z3du/f8fp8993fO+f2OJIQgGkmSFNV1t1Ax8PfAeCAdCAJ+wAWcB1qAk8CXw+3g64rWJwBrvDq9jcqB/dOmTSuYN28excXFeDwe+vv7uXjxIi0tLVy4cAGfz+cBvgCOAR8DnwA9CbbNlBAiqjZMvQAIr9cvbie32y0OHDggXn75ZbFo0SKRmpoqgC7gfeCvgLxE+SSESDiA+pqaeeLixZbbAvi6XC6XqK+vF6tWrRJjxowRwFXgLWDBtxHAb1atWiH6+i6J119/TXR0XI0ahBBC+P1+UVdXJx5//HEBCOAz4GeA49sCYF1xcYHw+y+JAwfeFRs3/rN45533YoIQUUtLi1i/fr0oKCgQmMHzGSDjXgcwBxAffvgbIUSfOHasQWzatFZs2rReNDTsGhaIYDAoXnzxRVFWVhYB8ZORAJCidW4E0+D+6uqJs/fseRchIBxWOHv2/zh8+CThsI38/FJ+9KMfk5ubGdNNDcPg+eefZ+PGjYTD4T8Af405tcb0h90NAGOB5kcemet8440NBIMKsmwlLS2F48dPsn//EYSw43SWMGXK95gz589junlraytPPvkk+/btawd+DDTfawAAJgDblyxZNG7z5mfQtDCybEEIgdOZy6VLl9i7t5H2dhejRzupqJjAhAmTmDbtu1F3sHz5curq6txAtRDicrS/u1sAAI6+9trr05YuraWh4b8pKSmhvLwUVVUJhRSczjwMI0xz80nOnLmAy9VPWlo2JSVlOJ2FVFZWUlpadMcOKioquXDh/CtCiKeiNepuAZgBHO7u7iQ3dyxNTds5ceIsdrudvLwcyspKsFgs+Hw+bDYb2dmjCQaDnDt3nra2y3R1uQkGddLSRpOb6yQ/v4hRoxykpKRitVrxer04ndk8+uhjnDx56jUhxN9Fa9jdAvAvDzzw/V80NR3B5ztLT48HVQ3T1vYlV664EEKQk5PFmDE5OJ15aJpOKKQgSRIORyp2exJut5uOjst0dXUTCCgIIeHzBRFCMH16NR9/3MiGDf+OYTBTCHEwWsMSvReIaN7SpX8JgNvdh8fjRwhBWdk4KivLaG1t49q1fs6caeHcuVaysjJxOEYxZkwOIOH1BpBlG2Vl5dx///0kJydhtVrIzMxAljM5erSRt97aimHwn0DUzsPdGQGlwPlTp5otVVXfpaXlE3y+ELIsI0nmlGW320lNtePxeGlvv4yiKAQCIcLhMElJSaSnOxg1KhVN0ygoGEtGRhqKonL1ajdbttTz5ptvA/wWc+9wT+0GAR7Ozy+yVFVNQlU7CIc1QBDhKUkSiqIQCoWQJInx48uw2WyoqkpXVzdudz+6buD3B8jOzqShYS9btzbQ1+ehtbUN4HPMTdc7wzHubgCYX1tbC9jo6XGhacYtR1Pks0AgCJjPdnZ2FgUFTiRJRtd1KioqWL/+FY4ePXkY+A/MhU8joAzXuEQDyAB+uHjxIgACARVdN5DloR8nSZLQNA2fTwMgK2s0n37axP79hwBeArbFw0A5Hje5gx602eyjZ86cDrgHh3/s8cQwBE5nHg0Ne1AUxQXsjpeBiQbw8Ny5c3E4sujt7UDTdIYTS202Cz6fnx079oGZKAnGy8BEApCBecuWmdOfx+ND12/9/N9J5nI5jyNHjtHcfAqGGezuZGSiNE2S5PKFC+cBfsJhHSGGN52mp6dRX78D4Axm0IubEglgXnX1NPLy8hkYaCMc1od1k9TUFDo7u9i+fQ/A/8TVQhIL4OGFC2sAuHbNg67rUUX/GyWEYOzYMRw4cASXqwfgvXgbGc9pMAWoAiqBicD0xx5bCugoiophgMUSGwBJkrBYZLZu3Q6wBzgXR3uB+ADIBFYBKyVJqigrK2Pq1CmUl99HeXkxodDwh39GRhoXLrSxd+8nAG/HwdY/0UgB/CPwVGVlZcHTTz9NpPgBIAR4PB34fD2Dq7/YbhyJ/nV1DQQCwQHg9yO09ZYaCYB3s7Kylm/evJmVK1fe9EVfn4feXhfl5aPp7lYwDIEsxxZuLBYLoZBCff12gA+AvhHYelsNF8C28vLyxQcPHiQv708LNx6PF0lSAQ1Vjaz+YusgJyeLEyfO0NR0AuI899+o4cwCzyUnJy9ubGy8pfNgGj8w0M/Vqx3IsmVYwz8zM4Nt23YihDhBHJe+X1esAGYD/7pr1y6cTudtL3I4UsnPL+PEiVYCAQ8pKfaY9uijRqXicvXw6qtvQpwXPl9XrAB+tXr1aubMmTPkhU7nWCZP/iGdnV4uX27HZpOxWCxD/k4IgdUq09nZy3PPrQf4KfBEjHZGrVgyQjMsFsvhrq4ucnJyou7A5wvx+eefoqpuZFkjLS0dqzUJw7h1xclisXDtWjf9/VBb+yh1dXUsX74c4AHM8vmQimW0xTICJhcXl8TkPIDDYecHP5jNhAmzGT26FFWVcbvdeL19qGoAITRkWSDLIEkGqurD5XJTWWnWBJYtW8aaNWvAnAluWQsciWIZAf9WU1Pz7I4dO0bUYSik0tNzBa/Xja4rBIN+NE1FCGMwT5hEQUElRUUlN/2uqmoSp09/8SpmdfiOiqmWGUNx9Nmqqkk3lCnDgy0iY1jFzlBIFQMDXuHxeITX67vtdR999HsBeDGP2cTFJxFjdbgUCDc37xNCCKEobiFEvxAiIIQICSGCgy08CGN4QG6vkMjPHyOIIiDGAiCWGHAJ2Llu3fMAWK0agUAf4XAPqtqLqvaj6wMI0Ye5aPMM/mEBzJxlGNABA/Oswx1dGLxWQQg/cA1IZuHCuQDLYrB5SMW6Enx21679C9at+xvbxo2/wu93oWkaFosFWZaQZQsWi4wkyciyjMViNnMxJA828z1YAImb47B5EEQIHcPQ0bQwmqYQDHrJzg4zefL9AFOANEy6dx3A58CjL7zw+vs5OXn8/OdPceXKRXp7r2G1mg6ZW14JSZKQ5QiIr95Hmvk93AjAfCQNNE1H100AoZCCqmokJSWRm5sN5rY7/ZsCAOZ09E9r1vzipfPnL7Fx41pSUuy0tnZgtVoGNz3iujMmjEgqTLopKSLL0uBoEBiGgRlqxPU1QuTVrAuA1+sHUBlBHeDrGm5GaDPw5BtvbGHBgp/S3t7J1KmTsFqtaJqGYUSecdNZwwBdN9B1HVXVrjdFCaMoKqGQiqJoqGoYVdXQdQPDEIMJEXMvYbcnRypBVzGDQlw0kpTYr4E/++yz4y0PPriMt9/+gHHjiqio+A6yLGMYZgbYHOo3Pg43xgaz+68+twzGk68ek4gkSaazswvMYGyMwO6bNNKc4GHg+/39ni0rVvyMJUtW8tFHf6SiopTy8nEkJydhGHe2dagssRACuz0ZEHzxxTkwM8NxUzyrw3+BmSGqra2dxxNPLKWqajxCaNjtqQSDCooSjmlrbBgGqakpjB8/gU2bfskzz2wAqMY8W3xbResTJKY8Xgv8LVA9d+7s3LVr/wGvt5cpUybhdOah6zp+f4CBAR+hkHLd2MirJEkkJdlISTFPj4TDGr/73QesXr0W4CnglaEMiAVAIoqjHw62bSkpmYvLy6dx7NhnrFmzgawsB/fdV0lZWQmVld/B6cy9HiesViuyLKMoCn19HlyuXnbt+iNbtrzHwYNNABuIwvlYlajqcDowa8WKn5CRMYrCwkLef/8PfszTG6VARUlJEaWlRaSk2ElOTsLhGEVycjKXL1+hre0ynZ1d+Hw+P2Y67L+ApkQYmigAS0pKSjInTpxIOBxmx47tYJ7qnA/Ygant7V9+r739yxLMhU0K5vnfVMxprgXowNz/tyTIRiCBAGbNmkVeXh79/f3s3r0b4H8HvwsBhwbbN65ElMacwPyamhqsVivnzp2jqakJ4N0E9DViJQLAI0VFRalVVVVomkZjYyOGYZwiynTW3VZCAMyaNYv8/Hzcbndk+CekqhMPxRtAFjD3oYceIjk5mTNnznD8+HGI03meRCjeABaUlJRkTJ8+nVAoxKFDh8BctTXHuZ+4Kd4AamfOnElhYSHd3d3s3LkToC7OfcRV8QSQCSyYM2cONpuNs2fPcvr0aTAPNd2ziieAuYWFhRkzZswgFApx5MgRMFdvZ+PYR9wVTwBLa2pqKC4uvnH437PBL6J4AhjncDhIT0/n/PnzkeFfH8f7J0Yx1AWG0rb58+eL3bt3i+rqagFsT7Dpt1UsdYF4AtgyefJkMWnSJAG0AbkJ9fIO+qYAvISZ2B8AKhLq4RBKVGVoKO3GrBs8jbn1/Vbo/wFEg3qJtsow9AAAAABJRU5ErkJggg==</href>
+				</Icon>
+				<hotSpot x="20" y="62" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0A28DE4C333C7229F87E">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1928D3C8243C7229F87E</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2A8264E9E73C7229F87E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_5C071F6F173C7229F87E">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0000ff</color>
+				<width>1.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_2C4B562E0F3C7229F87C">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1F89261FCB3C7229F87C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_01FCDE98C23C7229F87C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1F89261FCB3C7229F87C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2C4B562E0F3C7229F87C</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="594FD95364000001">
+		<name>TEST PLOT.kmz</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+		<Folder id="594FD95364000002">
+			<name>TEST PLOT</name>
+			<open>1</open>
+			<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+			<Folder id="594FD95365000003">
+				<name>ELYSIAN</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000004">
+					<name>LOCATION - ELYSIAN</name>
+					<LookAt>
+						<longitude>-118.242817070655</longitude>
+						<latitude>34.08901398677435</latitude>
+						<altitude>0</altitude>
+						<heading>-3.142937830598902e-05</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>141.1981860200532</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.2429527777778,34.08914444444445,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD95365000005">
+					<name>PLOT 1 - ELYSIAN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2433706316152,34.08906161553144,0 -118.2434022635507,34.0890294649558,0 -118.2433792581868,34.08900445919105,0 -118.2433203070761,34.08895087546155,0 -118.2432699832059,34.08893182360671,0 -118.2431837139438,34.08891753489418,0 -118.2431506442189,34.08894730389703,0 -118.2430945693626,34.08896397463606,0 -118.2429824194969,34.08893182453232,0 -118.2428947126705,34.0889234893812,0 -118.2428515782002,34.08893777847949,0 -118.2428141949782,34.08894611377895,0 -118.2427494932323,34.08899612547264,0 -118.2427451797728,34.08902232206701,0 -118.2427624335897,34.08907352450305,0 -118.2427753739588,34.0890985303454,0 -118.2428285732979,34.08913663447473,0 -118.242871707914,34.08915092349777,0 -118.242913404711,34.08915449572449,0 -118.2429651662552,34.08915568641883,0 -118.2430068630617,34.08915687709801,0 -118.2430370573063,34.0891580678035,0 -118.2430615002006,34.08914020642928,0 -118.2430902565166,34.089115200505,0 -118.2431247641055,34.08909138531916,0 -118.243175087716,34.08906518855798,0 -118.2432369139673,34.08905328079445,0 -118.2432843621305,34.08906042514153,0 -118.2433303727507,34.08909733838328,0 -118.2433706316152,34.08906161553144,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000006">
+					<name>SEED PLOT - ELYSIAN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2430169282496,34.08929262323517,0 -118.2430356199039,34.08927595262424,0 -118.2430442466657,34.08923427613651,0 -118.2430183657412,34.08920450729407,0 -118.2429896092699,34.0891949812954,0 -118.2429019021824,34.08920450744795,0 -118.2428659566913,34.08923784862753,0 -118.2428558920069,34.08928786037041,0 -118.2428616433523,34.08932358305447,0 -118.2429292210879,34.08932834605181,0 -118.2429723557727,34.08931405691434,0 -118.2430169282496,34.08929262323517,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000007">
+					<name>PLOT 2 SHADE - ELYSIAN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2427991265772,34.08935867887588,0 -118.2427848123596,34.089328025352,0 -118.242732946149,34.08930284178806,0 -118.2426984593855,34.08931388287453,0 -118.2426853622414,34.08934942128592,0 -118.2426954025579,34.08938767932117,0 -118.2427398788934,34.08940234402805,0 -118.242780883053,34.08939290468981,0 -118.2427991265772,34.08935867887588,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000008">
+					<name>PLOT 3+4 - ELYSIAN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2424767989844,34.08935685275508,0 -118.2425000683908,34.0893279336323,0 -118.2424850333266,34.0892694683964,0 -118.2424601788854,34.08920868909116,0 -118.2424101739071,34.08919298476106,0 -118.2423566808137,34.08920320433248,0 -118.2423545538916,34.08920545017278,0 -118.2423528614535,34.08925187984047,0 -118.2423720768305,34.08932750043385,0 -118.2424202005959,34.08937299645299,0 -118.2424767989844,34.08935685275508,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000009">
+					<name>ROW PLOTS - ELYSIAN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2425471579468,34.08941495339249,0 -118.242439597093,34.08944458169137,0 -118.2425299130405,34.08967496458688,0 -118.2426272153926,34.08963745340044,0 -118.2425471579468,34.08941495339249,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD9536500000A">
+				<name>BURN SCAR ELYSIAN</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD9536500000B">
+					<name>BURNSCAR</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2487284969046,34.08273122529172,0 -118.2485873828474,34.08269213632943,0 -118.2483151727312,34.08292836873797,0 -118.2485878261228,34.08305014644746,0 -118.2487284969046,34.08273122529172,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD9536500000C">
+				<name>RIO</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD9536500000D">
+					<name>LOCATION - RIO</name>
+					<LookAt>
+						<longitude>-118.2372070768259</longitude>
+						<latitude>34.09894839825837</latitude>
+						<altitude>0</altitude>
+						<heading>-3.180554681463516e-15</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>92.86610153476614</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.2372083333333,34.09894722222222,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD9536500000E">
+					<name>ORIGINAL PLOT - RIO</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2374267368009,34.09907395851292,0 -118.2375249501109,34.09905900988252,0 -118.2375454830397,34.09898311726356,0 -118.2375833284652,34.09893952625831,0 -118.237491938695,34.09880879010434,0 -118.2373507447122,34.09872922220449,0 -118.2371231923089,34.09868054240076,0 -118.2369996595099,34.09880732203652,0 -118.2370331578442,34.09908427267858,0 -118.2372906387373,34.09914785559412,0 -118.2374267368009,34.09907395851292,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500000F">
+					<name>NEW POLLINATOR PLOT - RIO</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2354951688251,34.0977279830434,0 -118.2361513884901,34.09783637296478,0 -118.2362448473335,34.09750307310326,0 -118.235870949166,34.09735267091261,0 -118.2353468104625,34.09734161351047,0 -118.2353111069173,34.09747644983265,0 -118.2351623467971,34.09807965484685,0 -118.235371630432,34.09812696797992,0 -118.2354951688251,34.0977279830434,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000010">
+				<name>BALDWIN</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000011">
+					<name>LOCATION - BALDWIN</name>
+					<LookAt>
+						<longitude>-118.3806196585879</longitude>
+						<latitude>34.01785336048992</latitude>
+						<altitude>0</altitude>
+						<heading>8.64171341417582e-05</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>129.7604555592235</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.3809,34.01782222222222,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD95365000012">
+					<name>TEST PLOT - BALDWIN</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.3811167347859,34.0180166071608,0 -118.3811455260995,34.0179948181892,0 -118.3811492813297,34.01791803815487,0 -118.3811280007111,34.01789002386576,0 -118.3811017129331,34.01787238526096,0 -118.3810641590257,34.01786512234824,0 -118.3810378712976,34.01785889696909,0 -118.3810378712523,34.01781428152351,0 -118.3810228496693,34.01776862851285,0 -118.380996561953,34.01774476445442,0 -118.3809615116941,34.01773231363293,0 -118.3809151952895,34.01772816337041,0 -118.3808876558038,34.01773542633767,0 -118.3808463465668,34.01775202743216,0 -118.3807800013827,34.0177997555424,0 -118.3807687351864,34.01782776987843,0 -118.3807712387301,34.01786408478929,0 -118.3808526054489,34.01791907597734,0 -118.380912691691,34.01792737652796,0 -118.3809452384058,34.01792011355348,0 -118.3809665189642,34.01795642841795,0 -118.3809965621284,34.01799378083065,0 -118.3810278570951,34.01801245701755,0 -118.3810691664574,34.01802075751228,0 -118.3811167347859,34.0180166071608,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000013">
+				<name>USC</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000014">
+					<name>USC CAMPUS</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2882172287258,34.01881487222934,0 -118.2882486707498,34.01876736543591,0 -118.2880607683413,34.01868285268054,0 -118.2880300930819,34.01873268627687,0 -118.2882174023253,34.01881407613507,0 -118.2882172287258,34.01881487222934,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000015">
+				<name>DEBS</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000016">
+					<name>LOCATON - DEBS</name>
+					<LookAt>
+						<longitude>-118.2003041791151</longitude>
+						<latitude>34.09963806337834</latitude>
+						<altitude>0</altitude>
+						<heading>-9.70981162749119e-05</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>209.9507962647613</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.2007305555555,34.09945555555556,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD95365000017">
+					<name>PLOT - DEBS</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2004376402387,34.09970625990341,0 -118.2006237932027,34.09976429869647,0 -118.2007659351271,34.09964667377107,0 -118.2007946072184,34.09956197014663,0 -118.2008361113084,34.09948752014451,0 -118.2008548370819,34.09943789622948,0 -118.2008602542025,34.09939729840415,0 -118.2008635832839,34.09937992214036,0 -118.2008141517946,34.09935901627676,0 -118.2007525377519,34.09933775783756,0 -118.200681437565,34.09931146841106,0 -118.2005882898226,34.09947394345892,0 -118.2004376402387,34.09970625990341,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000018">
+				<name>ELEPHANT</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000019">
+					<name>LOCATION - ELEPHANT HILL</name>
+					<LookAt>
+						<longitude>-118.1724163868219</longitude>
+						<latitude>34.09711871180955</latitude>
+						<altitude>0</altitude>
+						<heading>1.861499580905277e-05</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>135.8590305717187</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.1725194444444,34.09703888888889,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD9536500001A">
+					<name>TEST PLOT AREA - ELEPHANT HILL</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.1722918133151,34.09707572005536,0 -118.1726702666676,34.09722185169392,0 -118.1727191676957,34.09717783574102,0 -118.1728148439291,34.097142622715,0 -118.172853114356,34.09711797368846,0 -118.1729015959648,34.09703365035984,0 -118.1728814821753,34.0969069456026,0 -118.1727872714125,34.09673583276459,0 -118.1722367530311,34.09692951945797,0 -118.1722280292191,34.09701409802418,0 -118.1722918133151,34.09707572005536,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500001B">
+					<name>PLOT A - ELEPHANT HILL</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.1725082284878,34.0970161810631,0 -118.1725223969395,34.09700174073399,0 -118.1725311159759,34.09698278781324,0 -118.1725322058233,34.09694849205383,0 -118.1725234867479,34.09691870889566,0 -118.1724984194842,34.09690517110886,0 -118.1724526445012,34.09691148876271,0 -118.1724308468892,34.09691961143928,0 -118.172405779629,34.09693766183504,0 -118.1723970605714,34.09696112735567,0 -118.1723992403234,34.09698459287175,0 -118.1723687236467,34.09698188529917,0 -118.172343656357,34.09698910544027,0 -118.1723294878711,34.09701257094066,0 -118.1723403866712,34.09703152386718,0 -118.1723709033643,34.09704325664476,0 -118.1724068694834,34.09702610878624,0 -118.1724362962944,34.09701618107621,0 -118.1724733522778,34.09702701130828,0 -118.1725082284878,34.0970161810631,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500001C">
+					<name>PLOT B - ELEPHANT HILL</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.172695688277,34.09703423120245,0 -118.1727240251373,34.0970035454489,0 -118.1727349238913,34.09697556729073,0 -118.1727327440008,34.09693134380385,0 -118.1727142159803,34.09692322116396,0 -118.1726782498799,34.09692592881794,0 -118.1726259355795,34.09693224656565,0 -118.1725932391606,34.09694397938309,0 -118.1725725314325,34.09695571217382,0 -118.172568171957,34.09699000793758,0 -118.1725768910454,34.09701257092184,0 -118.1726259357752,34.09703332880714,0 -118.1726575423879,34.09704054891343,0 -118.172695688277,34.09703423120245,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500001D">
+					<name>PLOT C - ELEPHANT HILL</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.1727044070071,34.09691329346091,0 -118.1727174855494,34.09689434048767,0 -118.1727207551067,34.09685914216791,0 -118.1727033169509,34.09683567666326,0 -118.1726891484968,34.09682845654118,0 -118.1726564520697,34.09683116417817,0 -118.1726041378445,34.0968510197563,0 -118.1725932391085,34.09690065840915,0 -118.1726183064016,34.09692231885188,0 -118.1726401040312,34.09692502636356,0 -118.1726629915435,34.09692683136635,0 -118.1726924183454,34.0969205136464,0 -118.1727044070071,34.09691329346091,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD9536500001E">
+				<name>CATALINA</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD9536500001F">
+					<name>GREENRAVINE</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.4805860300967,33.44494516637144,0 -118.4804536778644,33.44491857679024,0 -118.480360793931,33.44504248145333,0 -118.479865797677,33.44506333267116,0 -118.4798673362383,33.44513273469884,0 -118.4798847754066,33.44514593118512,0 -118.4799359880338,33.44515375504913,0 -118.4802470728845,33.44516490400616,0 -118.4803151737287,33.44521584034968,0 -118.4805423718031,33.44515184167327,0 -118.4805860300967,33.44494516637144,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000020">
+				<name>LA ESQUINITA</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000021">
+					<name>LA ESQUINITA</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2255567794159,34.08634154718934,0 -118.2255644469879,34.08611466979146,0 -118.2255681676476,34.08592889249466,0 -118.2255904732554,34.08549884015452,0 -118.2252012720278,34.08575939259374,0 -118.2251428240926,34.08582047609172,0 -118.2250513189118,34.08584555601104,0 -118.2249961614703,34.08583731858953,0 -118.2248554987038,34.08593972217233,0 -118.2250852257578,34.08614678153178,0 -118.2253478067292,34.0863752010554,0 -118.2255567794159,34.08634154718934,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000022">
+				<name>RAINBOW</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000023">
+					<name>LOCATION - RAINBOW</name>
+					<LookAt>
+						<longitude>-118.2101017843005</longitude>
+						<latitude>34.09806430815394</latitude>
+						<altitude>0</altitude>
+						<heading>0</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>304.4042370812323</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.2104027777778,34.09805277777778,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD95365000024">
+					<name>LOWER CANYON - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.210455876909,34.09773435011702,0 -118.210111272427,34.09800574998541,0 -118.2103295876452,34.09818768470515,0 -118.2104072426034,34.09822882957614,0 -118.2105190380211,34.09836175767811,0 -118.2105800332655,34.09841628597789,0 -118.2106782078486,34.09847644192759,0 -118.2107570061807,34.09861255595474,0 -118.2109003723968,34.098704479198,0 -118.2111648734236,34.09896833327181,0 -118.2113252713034,34.09889448347947,0 -118.2114513735266,34.09869078825188,0 -118.2113360438959,34.09850166529994,0 -118.2111957127726,34.09827804370662,0 -118.2111085119366,34.09815387691491,0 -118.2110135210774,34.0980847391686,0 -118.2109092074952,34.09800537016785,0 -118.2108414626337,34.09793171740683,0 -118.2107338866713,34.09786705242578,0 -118.2105983759144,34.09782873064021,0 -118.210455876909,34.09773435011702,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000025">
+					<name>PLOT A NORTH FIRE - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2108202748353,34.0985472704474,0 -118.2107613282046,34.09861047602791,0 -118.2109126597159,34.09870878121914,0 -118.2109870695528,34.09869103981413,0 -118.2109807182465,34.09864623842851,0 -118.2109134495956,34.0985923461018,0 -118.2108195939972,34.09855026977663,0 -118.2108202748353,34.0985472704474,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000026">
+					<name>PLOT B FIRE SOUTH - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2105378359591,34.0982720549955,0 -118.210532473944,34.09830860399133,0 -118.2105384691655,34.09834428956305,0 -118.2106020339917,34.09841736330834,0 -118.2106418457827,34.09842931782504,0 -118.2106698230246,34.09841158472116,0 -118.2106743568623,34.09838076180886,0 -118.2106167406605,34.09832011823511,0 -118.2105764170524,34.0982861336455,0 -118.2105378359591,34.0982720549955,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000027">
+					<name>PLOT C - WOODLAND - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2108682752077,34.09828671156652,0 -118.2109114598613,34.09828118740862,0 -118.2109563902557,34.09825618422391,0 -118.2109598636169,34.09819321526341,0 -118.2108922937692,34.09814624217756,0 -118.2108566823685,34.09815413420214,0 -118.2108259594152,34.0981687423197,0 -118.2108099060254,34.09819967773064,0 -118.2108232755828,34.09825314219864,0 -118.2108405695847,34.09828104379618,0 -118.2108682752077,34.09828671156652,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000028">
+					<name>PLOT D - WOODLAND - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2109012882581,34.0984136109474,0 -118.2109481739323,34.09839748944715,0 -118.2109712880845,34.09835239110519,0 -118.2109610917909,34.09832369118352,0 -118.2109274237919,34.09830515839867,0 -118.2108669577712,34.09832492657951,0 -118.2108520286925,34.09838700740656,0 -118.21086974532,34.09841203182258,0 -118.2109012882581,34.0984136109474,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000029">
+					<name>PLOT E RIPARIAN - RAINBOW </name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2107159075337,34.09840716559837,0 -118.2107602169611,34.09839843338201,0 -118.2107838177771,34.09836639743278,0 -118.2107808888531,34.09832900007174,0 -118.2107555882645,34.09829774583218,0 -118.2107056880283,34.09830611708934,0 -118.21068702436,34.09835614996214,0 -118.2106924469165,34.09838816990816,0 -118.2107159075337,34.09840716559837,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500002A">
+					<name>PLOT F - HILLSIDE - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2113116682346,34.09846358497236,0 -118.2113029351519,34.09844854850416,0 -118.2112016883151,34.09829866924227,0 -118.2111846124509,34.09831845675492,0 -118.2111676842588,34.09835567512636,0 -118.2111750320843,34.09839205336688,0 -118.2111886142305,34.09842452367483,0 -118.2112250005757,34.09845145591713,0 -118.2112698725018,34.09846357606499,0 -118.2113116682346,34.09846358497236,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD9536500002B">
+					<name>PLOT G - HILLSIDE - RAINBOW</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2110399351141,34.09850706753792,0 -118.2110372868298,34.09843739535032,0 -118.2110382501138,34.09838788195972,0 -118.2109077330542,34.09845224033639,0 -118.2109791804303,34.098502191934,0 -118.2110399351141,34.09850706753792,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD9536500002C">
+				<name>JEFFERSON</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD9536500002D">
+					<name>LOCATION - (NEW PLOT) JEFFERSON BLVD</name>
+					<LookAt>
+						<longitude>-118.2961989297877</longitude>
+						<latitude>34.02608655694831</latitude>
+						<altitude>0</altitude>
+						<heading>3.180554681463517e-15</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>283.1261855628503</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-118.2964388888889,34.02608888888889,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD9536500002E">
+					<name>PROPOSED - (NEW PLOT) JEFFERSON BLVD</name>
+					<LookAt>
+						<longitude>-118.2961989299344</longitude>
+						<latitude>34.02608655691085</latitude>
+						<altitude>0</altitude>
+						<heading>-8.2121921875388e-11</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>283.1261856592878</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.2968527235722,34.02647899401514,0 -118.2968616588826,34.02566761596157,0 -118.2960480649892,34.025667618373,0 -118.2960659448542,34.02647899556946,0 -118.2968527235722,34.02647899401514,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD9536500002F">
+				<name>PUENTE HILLS</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000030">
+					<name>PUENTEHILLS</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-118.0363762879296,34.02309484972979,0 -118.0364283406596,34.02284914734211,0 -118.0362500051026,34.02283530424008,0 -118.0360019397043,34.02285081296309,0 -118.0358842401956,34.02299121418722,0 -118.0363762879296,34.02309484972979,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000031">
+				<name>SAN BRUNO</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000032">
+					<name>SAN BRUNO</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-122.4393615861109,37.69973660561994,0 -122.4393289158718,37.69966078863622,0 -122.4392917195434,37.69963979970684,0 -122.439162182439,37.6996074575054,0 -122.43912912109,37.69960293107066,0 -122.4389987721395,37.69961125595275,0 -122.4389488311784,37.69962988398726,0 -122.4388775275703,37.69970946571981,0 -122.4388732471826,37.69971406689673,0 -122.4388715159634,37.69971561529433,0 -122.4389117998506,37.699811032019,0 -122.4393413976422,37.69981150861066,0 -122.4393615861109,37.69973660561994,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000033">
+				<name>STARR KING</name>
+				<LookAt>
+					<longitude>-122.3965913388535</longitude>
+					<latitude>37.75245131067396</latitude>
+					<altitude>0</altitude>
+					<heading>62.11177305207123</heading>
+					<tilt>59.47390010195284</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>1576.427462767085</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000034">
+					<name>LOCATION - STARR KING</name>
+					<LookAt>
+						<longitude>-122.399135826752</longitude>
+						<latitude>37.75267066418085</latitude>
+						<altitude>0</altitude>
+						<heading>9.541664044390549e-15</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>177.049030100147</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-122.3992055555556,37.75253888888889,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD95365000035">
+					<name> GRASSLAND PLOT - STARR KING</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-122.3992779971299,37.75261291493317,0 -122.3992949588477,37.75259775466374,0 -122.3992979086603,37.75256510180125,0 -122.3992897964974,37.75254002907619,0 -122.3992551355523,37.75250329463679,0 -122.3992226870457,37.75248638512785,0 -122.3991850762935,37.75247938809066,0 -122.3991629523235,37.75248055425932,0 -122.3991341911547,37.75248988364193,0 -122.3991290288772,37.75251320711674,0 -122.3991349286007,37.75253827985613,0 -122.3991710644391,37.75257501433376,0 -122.3992175248381,37.75259483927873,0 -122.3992543981845,37.7526070840843,0 -122.3992779971299,37.75261291493317,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000036">
+					<name>PINE PLOT - STARR KING</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-122.3990096195974,37.75285986783116,0 -122.3990128749099,37.75281796138238,0 -122.3989831041453,37.75279713378858,0 -122.3989592915104,37.7527916666998,0 -122.3989189770929,37.75280041697696,0 -122.3989011375055,37.75282566203175,0 -122.3989127039816,37.75285435293799,0 -122.3989732909775,37.75286764897536,0 -122.3990096195974,37.75285986783116,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+				<Placemark id="594FD95365000037">
+					<name>ENTIRE PLOT - STAR KING</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-122.3993859529815,37.75264852545251,0 -122.399372244023,37.75260065319723,0 -122.3993516807416,37.75256452319599,0 -122.3993219783141,37.75253019972713,0 -122.3992899911368,37.75250581199542,0 -122.3992420104168,37.75248052104008,0 -122.3991894601559,37.75246516581224,0 -122.3991300555408,37.75245884307368,0 -122.3990775053086,37.7524579398134,0 -122.3990340942436,37.75246426255976,0 -122.3990043919271,37.75247329504862,0 -122.398959838426,37.75249316653357,0 -122.398924424072,37.75251123150051,0 -122.3988787281127,37.75253742568539,0 -122.398845598514,37.75255187762422,0 -122.3988078992878,37.75257355553943,0 -122.3987781968582,37.7525862009675,0 -122.3987359279558,37.75260878209966,0 -122.3986833774185,37.75262413716351,0 -122.3986399660631,37.75263045973279,0 -122.3986273996086,37.75263678244013,0 -122.3986536731738,37.75289872551088,0 -122.3987953315094,37.75289601609926,0 -122.3989152839444,37.75289150003783,0 -122.3991152044175,37.75287704815318,0 -122.3993985202285,37.75286078935508,0 -122.3993859529815,37.75264852545251,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+			<Folder id="594FD95365000038">
+				<name>OHLONE HILLSIDE</name>
+				<styleUrl>#__managed_style_01FCDE98C23C7229F87C</styleUrl>
+				<Placemark id="594FD95365000039">
+					<name>LOCATION - OHLONE HILLSIDE</name>
+					<LookAt>
+						<longitude>-122.247171784046</longitude>
+						<latitude>37.87875796595537</latitude>
+						<altitude>0</altitude>
+						<heading>9.54166404439055e-15</heading>
+						<tilt>0</tilt>
+						<gx:fovy>35</gx:fovy>
+						<range>271.7065639038532</range>
+						<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+					</LookAt>
+					<styleUrl>#__managed_style_0A28DE4C333C7229F87E</styleUrl>
+					<Point>
+						<coordinates>-122.2471916666667,37.87865,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="594FD9536500003A">
+					<name>EXISTING PLOT - OHLONE HILLSIDE</name>
+					<styleUrl>#__managed_style_3B1F062C463C7229F87E</styleUrl>
+					<Polygon>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-122.2470474038411,37.87866985424019,0 -122.247118570159,37.87870318117147,0 -122.2471870561129,37.87874074610172,0 -122.2472508990046,37.87875540557148,0 -122.2472950086494,37.87876090285555,0 -122.247336796736,37.8787581541638,0 -122.2473658161706,37.87873341624734,0 -122.2473890316188,37.8786830242571,0 -122.2473971569082,37.87862255390094,0 -122.2473797451339,37.87858590523911,0 -122.2473367962885,37.87854742417787,0 -122.2472950082991,37.87853001609925,0 -122.2472381302607,37.87852177019194,0 -122.2471754483496,37.87852635128473,0 -122.2471800914506,37.87856299997713,0 -122.247175448338,37.87860148109347,0 -122.247163840559,37.87862255408368,0 -122.2471383034383,37.87864271085128,0 -122.2470918722949,37.87866103516662,0 -122.2470474038411,37.87866985424019,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Folder>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
