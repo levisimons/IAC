@@ -35,6 +35,7 @@ Exide_Subset$`Result Units` <- gsub("mg/kg","ppm",Exide_Subset$`Result Units`)
 background_Pb <- median(na.omit(Exide_Subset$Result))
 
 #Read in Eaton fire ash sample data
+#Stored here: https://github.com/levisimons/IAC/blob/main/Eaton/EFA_XRF-demo.csv
 sample_input <- fread(input="EFA_XRF-demo.csv",sep=",")
 #Set sample dates
 sample_input$Date <- mdy(sample_input$Date)
