@@ -20,6 +20,7 @@ Eaton <- rast("COG_Eaton_AV3_provisional_dNBR_866nm_2198nm_20240905-20250116.tif
 Eaton <- terra::project(Eaton, "EPSG:4326")
 
 #Read in CSUCI sentiment data from 2025
+#Obtained from: https://github.com/levisimons/IAC/blob/main/Eaton/LAStronger-Rhetoric2025.csv
 LAStronger_2025 <- fread(input="LAStronger-Rhetoric2025.csv",sep=",")
 #Remove entries with missing spatial coordinates
 LAStronger_2025 <- LAStronger_2025[!is.na(LAStronger_2025$x) & !is.na(LAStronger_2025$y),]
@@ -27,6 +28,7 @@ LAStronger_2025 <- LAStronger_2025[!is.na(LAStronger_2025$x) & !is.na(LAStronger
 LAStronger_2025 <- st_as_sf(LAStronger_2025,coords=c("x","y"),crs=4326)
 
 #Read in CSUCI sentiment data from 2026
+#Obtained from: https://github.com/levisimons/IAC/blob/main/Eaton/LAStronger-Rhetoric2026.csv
 LAStronger_2026 <- fread(input="LAStronger-Rhetoric2026.csv",sep=",")
 #Remove entries with missing spatial coordinates
 LAStronger_2026 <- LAStronger_2026[!is.na(LAStronger_2026$x) & !is.na(LAStronger_2026$y),]
