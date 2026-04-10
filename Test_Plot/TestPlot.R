@@ -19,6 +19,7 @@ setwd(wd)
 sf_use_s2(FALSE)
 
 #Read in geospatial data from Test Plot
+#File available here: https://github.com/levisimons/IAC/blob/main/Test_Plot/TEST_PLOT.kml
 plot_input <- do.call(
   rbind,
   lapply(st_layers("TEST_PLOT.kml")$name, function(lyr) st_read("TEST_PLOT.kml", layer = lyr, quiet = TRUE))
@@ -62,6 +63,7 @@ for(plot_boundary in unique(test_plots$Description)){
 }
 
 #GBIF.org (1 January 2026) GBIF Occurrence Download https://doi.org/10.15468/dl.vm32m5
+#File available here: https://github.com/levisimons/IAC/blob/main/Test_Plot/0070373-251120083545085.zip
 gbif_input <- fread(input="0070373-251120083545085.zip",quote="")
 #Set unique sample IDs
 gbif_input[, sampleid := .GRP, by = .(eventDate,decimalLongitude,decimalLatitude)]
@@ -69,9 +71,11 @@ gbif_input[, sampleid := .GRP, by = .(eventDate,decimalLongitude,decimalLatitude
 gbif_spatial <- st_as_sf(gbif_input,coords=c("decimalLongitude","decimalLatitude"),crs=4326)
 
 #California native plant list from https://calscape.org/search?plant=&orderBy=&location_name=Los%20Angeles%20County%2C%20CA%2C%20USA&lat=34.3871821&lng=-118.1122679&page=1&perPage=60&height_from=&height_to=&width_from=&width_to=
+#File available here: https://github.com/levisimons/IAC/blob/main/Test_Plot/LosAngelesNativePlants.csv
 ca_plants <- fread(input="LosAngelesNativePlants.csv",sep=",")
 
 #California native animal list from: LASAN (2021) Los Angeles Native Fauna. Los Angeles
+#File available here: https://github.com/levisimons/IAC/blob/main/Test_Plot/LosAngelesNativeAnimals.csv
 ca_animals <- fread(input="LosAngelesNativeAnimals.csv",sep=",")
 
 #Determine if a species is a California native
@@ -81,6 +85,7 @@ gbif_spatial$Native_Animal <- ifelse(gbif_spatial$species %in% ca_animals$specie
 i_max <- 11
 j=1
 biodiversity <- c()
+#Test Plot metadata available here: https://github.com/levisimons/IAC/blob/main/Test_Plot/Test_Plot_Metadata.csv
 metadata <- fread(input="Test_Plot_Metadata.csv",sep=',')
 for(plot_boundary in unique(test_plots$Description)){
   #Get test plot boundaries
