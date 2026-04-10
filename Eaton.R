@@ -15,13 +15,25 @@ require(plyr)
 set.seed(1)
 
 #Set working directory
-wd <- ""
+wd <- "/Users/levisimons/Desktop/Ecology"
 setwd(wd)
 
 #Set sf settings to reduce risk of errors
 sf_use_s2(FALSE)
 
-#Read in sample data
+#Read in Los Angeles Exide metals data
+Exide_Lead <- fread("2025-03-28_Data-Table-English.csv")
+Exide_Lead$Sample_Year <- as.numeric(format(as.Date(Exide_Lead$`Sample Date`, format = "%m/%d/%y"),"%Y"))
+units <- c("ppm","mg/kg","mg/cm2")
+Exide_Subset <- Exide_Lead[Exide_Lead$`Result Units` %in% units,]
+Exide_Subset$`ZIP Code` <- as.character(Exide_Subset$`ZIP Code`)
+Exide_Subset$Result <- as.numeric(Exide_Subset$Result)
+#Sync measurements in mg/kg and ppm.
+Exide_Subset$`Result Units` <- gsub("mg/kg","ppm",Exide_Subset$`Result Units`)
+#Estimate a background lead level from Exide study area
+background_Pb <- median(na.omit(Exide_Subset$Result))
+
+#Read in Eaton fire ash sample data
 sample_input <- fread(input="EFA_XRF-demo.csv",sep=",")
 #Set sample dates
 sample_input$Date <- mdy(sample_input$Date)
@@ -252,19 +264,17 @@ for(i in 1:i_max){
   colnames(tmp) <- c("rho","p")
   tmp$rho <- cor.test(sampled_env_test$Pb,predicted_Pb,method="spearman")$estimate
   tmp$p <- cor.test(sampled_env_test$Pb,predicted_Pb,method="spearman")$p.value
-  stat_tests[[i]] <- tmp
   
-  #Store relative importance of variable outputs as a temporary data frame.
-  tmp <- as.data.frame(rf1$importance)
-  #Set one column to store the variable names from the row names.
-  tmp$VariableName <- rownames(tmp)
-  #Store this importance data frame in the importance list.
-  importance_list[[i]] <- tmp
-  
-  i=i+1
-  
-  #Store significant partial plot results
   if(cor.test(sampled_env_test$Pb,predicted_Pb,method="spearman")$p.value<=0.05){
+    stat_tests[[i]] <- tmp
+    
+    #Store relative importance of variable outputs as a temporary data frame.
+    tmp <- as.data.frame(rf1$importance)
+    #Set one column to store the variable names from the row names.
+    tmp$VariableName <- rownames(tmp)
+    #Store this importance data frame in the importance list.
+    importance_list[[i]] <- tmp
+    #Store significant partial plot results
     #Loop through each environmental variable and store the partial response outputs in a temporary data frame.
     for(environmental_layer in env_vars_filtered){
       #Store partial plot chart data in a temporary data frame.
@@ -276,12 +286,11 @@ for(i in 1:i_max){
       j <- j+1
     }
   }
+  i=i+1
 }
 stat_tests <- rbindlist(stat_tests)
 FisherZInv(mean(FisherZ(stat_tests[p<=0.05,rho])))
 FisherZInv(sd(FisherZ(stat_tests[p<=0.05,rho])))
-nrow(stat_tests[p<=0.05,])/nrow(stat_tests)
-
 
 #Convert list of importance data frames to a single data frame.
 importance_total <- rbind.fill(importance_list)
@@ -294,7 +303,6 @@ importance_total$Importance <- rank(desc(importance_total$Importance))
 #Save rank importance table.
 write.table(importance_total,"Eaton_importance_uncalibrated_rank_importance.txt",quote=FALSE,sep="\t",row.names = FALSE)
 
-
 #Collapse partial plot outputs into single data frame.
 partial_plots <- rbind.fill(partial_plot_list)
 partial_plots <- as.data.frame(partial_plots)
@@ -303,6 +311,74 @@ partial_plots <- read.table("Eaton_uncalibrated_partial_plots.txt", header=TRUE,
 #Set WUI mode to categorical for plotting
 partial_plots$WUI_mode <- as.factor(partial_plots$WUI_mode)
 
+##Make predictive lead release maps
+#Create a random subset of parcel locations
+parcel_points <- Parcel_subset[sample(nrow(Parcel_subset), 5000), ]
+#Assign a parcel ID
+parcel_points$Parcel_ID <- rownames(parcel_points)
+#Set CRS to EPSG:3857 temporarily to use a system in meters
+parcel_points <- st_transform(parcel_points, crs = 3857)
+#Create buffers around sample points of a set distance
+parcel_buffer <- st_buffer(parcel_points,dist=1400)
+#Set CRS back to EPSG:4326
+parcel_points <- st_transform(parcel_points, crs = 4326)
+parcel_buffer <- st_transform(parcel_buffer,crs=4326)
+#Get the parcel points within the sample buffers
+sampled_parcel_env <- st_intersection(parcel_buffer,env_data)
+
+#Store parcel coordinates
+parcel_coordinates <- as.data.frame(cbind(parcel_points$Parcel_ID,st_coordinates(parcel_points)))
+parcel_coordinates <- parcel_coordinates[!duplicated(parcel_coordinates),]
+colnames(parcel_coordinates) <- c("Parcel_ID","longitude","latitude")
+
+#Get the mean of environmental and parcel metrics
+parcel_env_summary <- st_drop_geometry(sampled_parcel_env) %>%
+  dplyr::group_by(Parcel_ID) %>%
+  dplyr::summarise(dplyr::across(-c(WUI), median, na.rm = TRUE))
+
+#Get the mode of the WUI values within each parcel buffer
+WUI_parcel_mode <- sampled_parcel_env %>%
+  dplyr::group_by(Parcel_ID) %>%
+  dplyr::summarize(WUI_mode = getmode_na(WUI))
+WUI_parcel_mode <- st_drop_geometry(WUI_parcel_mode)
+
+#Add in the most common WUI value within the sampling buffers.
+parcel_env_summary <- dplyr::left_join(parcel_env_summary,WUI_parcel_mode)
+
+#Prepare modeling data for random forest
+parcel_env_summary <- parcel_env_summary[,!colnames(parcel_env_summary) %in% c("O","Mg","Al","Si","P","S","K","Ca","Ti","Mn","Fe","Ni","Cu","Zn","Ga","As","Rb","Sr","Y","Zr","Nb")]
+parcel_env_summary$WUI_mode <- as.factor(parcel_env_summary$WUI_mode)
+
+#Run a random forest model over full data.
+rf2 <- suppressWarnings(tuneRF(x=sampled_env_summary[,!(colnames(sampled_env_summary) %in% c("EFA.ID","Days","Pb"))],y=sampled_env_summary$Pb,stepFactor=1,plot=FALSE,doBest=TRUE))
+
+#Predict lead concentrations at parcels
+parcel_Pb <- predict(rf2,newdata=parcel_env_summary[,!(colnames(parcel_env_summary) %in% c("Parcel_ID","Pb"))])
+
+#Make a predicted lead map
+predicted_lead_map <- as.data.frame(parcel_env_summary$Parcel_ID)
+colnames(predicted_lead_map) <- c("Parcel_ID")
+predicted_lead_map <- dplyr::left_join(predicted_lead_map,parcel_coordinates)
+predicted_lead_map$Pb <- parcel_Pb
+predicted_lead_map$longitude <- as.numeric(predicted_lead_map$longitude)
+predicted_lead_map$latitude <- as.numeric(predicted_lead_map$latitude)
+
+pal <- colorNumeric(palette = "plasma", domain = log10(predicted_lead_map$Pb))
+leaflet(predicted_lead_map) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    radius = 5,
+    fillColor = pal(log10(predicted_lead_map$Pb)), # Color points by category
+    fillOpacity = 0.8,
+    stroke = TRUE,
+    color = "black", # Border color
+    weight = 1
+  ) %>%
+  addPolygons(data=Eaton,color = "blue", weight = 0.1, smoothFactor = 0.1, opacity = 1, fillOpacity = 0.1, fillColor = "blue", highlightOptions = highlightOptions(color = "white", weight = 2, sendToBack = TRUE)) %>%
+  addLegend(pal = pal, values =log10(predicted_lead_map$Pb) , opacity = 0.7, title = "log(Mean Pb)",
+            position = "bottomright")
+
+#Partial plots results for original model
 k <- 17
 #Plot heat maps for continuous data.
 if(!is.factor(partial_plots[,env_vars_filtered[k]])){
@@ -320,24 +396,3 @@ if(is.factor(partial_plots[,env_vars_filtered[k]])){
     geom_violin(aes(x=!!as.name(env_vars_filtered[k]), y=`Pb predicted`))+
     theme_bw(base_size=25)
 }
-
-
-#Map environmental clusters.
-sample_map <- dplyr::left_join(sampled_env_summary,sampled_coordinates)
-sample_map <- st_as_sf(sample_map,coords=c("longitude","latitude"),crs=4326)
-
-pal <- colorNumeric(palette = "plasma", domain = sample_map$Pb)
-leaflet(sample_map) %>%
-  addTiles() %>%
-  addCircleMarkers(
-    radius = 5,
-    fillColor = ~pal(Pb), # Color points by category
-    fillOpacity = 0.8,
-    stroke = TRUE,
-    color = "black", # Border color
-    weight = 1,
-    popup = ~paste("Mean Pb:", Pb) # Optional: add popup info
-  ) %>%
-  addPolygons(data=Eaton,color = "blue", weight = 0.1, smoothFactor = 0.1, opacity = 1, fillOpacity = 0.1, fillColor = "blue", highlightOptions = highlightOptions(color = "white", weight = 2, sendToBack = TRUE)) %>%
-  addLegend(pal = pal, values = ~Pb, opacity = 0.7, title = "Mean Pb",
-            position = "bottomright")
