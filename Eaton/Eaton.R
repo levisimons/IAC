@@ -22,6 +22,7 @@ setwd(wd)
 sf_use_s2(FALSE)
 
 #Read in Los Angeles Exide metals data
+#Stored here: https://github.com/levisimons/IAC/blob/main/Eaton/2025-03-28_Data-Table-English.csv.zip
 Exide_Lead <- fread("2025-03-28_Data-Table-English.csv")
 Exide_Lead$Sample_Year <- as.numeric(format(as.Date(Exide_Lead$`Sample Date`, format = "%m/%d/%y"),"%Y"))
 units <- c("ppm","mg/kg","mg/cm2")
