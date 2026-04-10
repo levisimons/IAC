@@ -43,10 +43,12 @@ SCCOOS_buffer <- SCCOOS_buffer |>
 SCCOOS$day <- as.numeric(as.Date(SCCOOS$`time (UTC)`)-min(as.Date(SCCOOS$`time (UTC)`)))
 
 #Read in microplastics data
+#Obtained from: https://github.com/levisimons/IAC/blob/main/Microplastics/Microplastics.csv
 microplastics_input <- fread(input="Microplastics.csv",sep=",")
 microplastics_input[microplastics_input==""] <- NA
 
 #Read in microplastics metadata
+#Obtained from: https://github.com/levisimons/IAC/blob/main/Microplastics/Microplastics_metadata.csv
 microplastics_metadata <- fread(input="Microplastics_metadata.csv",sep=",")
 #Force longitude to being numeric
 microplastics_metadata$Longitude <- as.numeric(gsub("[^0-9.-]", "", microplastics_metadata$Longitude))
