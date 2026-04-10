@@ -7,6 +7,7 @@ require(lubridate)
 require(zetadiv)
 require(terra)
 require(fossil)
+require(iNEXT)
 
 #Set random number string
 set.seed(1)
@@ -30,6 +31,222 @@ sample_input <- sample_input[sample_input$class=="Insecta",]
 
 #Make a spatial points object
 sample_spatial <- st_as_sf(sample_input,coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+
+#Wildfire Hazard Potential data from https://www.fs.usda.gov/rds/archive/catalog/RDS-2015-0047-4
+WHP_input <- rast("whp2023_cnt_conus.tif")
+WHP_input <- terra::project(WHP_input, "EPSG:4326")
+
+#Extract WHP values
+WHP_points <- terra::extract(WHP_input,sample_spatial)
+
+#Add in WHP values
+sample_spatial$WHP <- WHP_points$Band_1
+
+#Get Fire Hazard Severity Zones map data from https://www.lab.data.ca.gov/dataset/fire-hazard-severity-zones-in-sra-effective-april-1-2024-with-lra-recommended-2007-2011
+FHSZ_input <- st_read("FHSZ_SRA_LRA_Combined.shp")
+#Reproject
+FHSZ_input <- st_transform(FHSZ_input, 4326)
+
+#Add in FHSZ values to the sample locations.
+FHSZ_spatial <- st_intersection(sample_spatial,FHSZ_input[,"FHSZ"])
+tmp <- st_coordinates(FHSZ_spatial)
+colnames(tmp) <- c("decimalLongitude","decimalLatitude")
+FHSZ_spatial <- st_drop_geometry(FHSZ_spatial)
+FHSZ_spatial <- cbind(FHSZ_spatial,tmp)
+#Remove duplicates
+FHSZ_spatial <- data.table(FHSZ_spatial[!duplicated(FHSZ_spatial),])
+
+#Set unique sample IDs
+FHSZ_spatial[, sampleid := .GRP, by = .(eventDate,decimalLongitude,decimalLatitude)]
+#Remove sites without FHSZ values.
+FHSZ_spatial <- FHSZ_spatial[!is.na(FHSZ_spatial$FHSZ),]
+#Remove undersampled sites
+n_threshold <- 20
+FHSZ_filtered <- FHSZ_spatial %>%
+  group_by(sampleid) %>%
+  filter(n() >= n_threshold) %>%
+  ungroup()
+#Set FHSZ values as factors
+FHSZ_filtered$FHSZ <- as.factor(FHSZ_filtered$FHSZ)
+
+#Create a presence/absence data table.
+taxa_count <- FHSZ_filtered[,c("sampleid","taxonKey")]
+taxa_count <- taxa_count[!duplicated(taxa_count),]
+taxa_count <- taxa_count %>%
+  dplyr::group_by(sampleid, taxonKey) %>%
+  dplyr::mutate(taxonCount = n()) %>%
+  ungroup()
+taxa_count <- taxa_count[!duplicated(taxa_count),]
+gbif_pa <- taxa_count %>%
+  pivot_wider(
+    names_from = taxonKey,
+    values_from = taxonCount,
+    values_fill = 0   # fill missing combinations with 0 (or NA if you prefer)
+  )
+gbif_pa <- data.frame(gbif_pa)
+rownames(gbif_pa) <- gbif_pa$sampleid
+gbif_pa$sampleid <- NULL
+
+#Set environmental data set
+env_sampled <- FHSZ_filtered[,c("sampleid","FHSZ","WHP")]
+env_sampled$WHP <- as.factor(env_sampled$WHP)
+env_sampled <- env_sampled[!duplicated(env_sampled),]
+env_sampled <- data.frame(env_sampled[,c("FHSZ","WHP")])
+#Set location data set
+location_sampled <- FHSZ_filtered[,c("sampleid","decimalLongitude","decimalLatitude")]
+location_sampled <- location_sampled[!duplicated(location_sampled),]
+location_sampled$sampleid <- NULL
+#Calculate how much zeta diversity varies with WUI and distance for common (High zeta order) and rare species (Low zeta order).
+zeta_low <- 2
+zeta_high <- 10
+#Zeta.varpart returns a data frame with one column containing the variation explained by each component:
+#a (the variation explained by distance alone)
+#b (the variation explained by either distance or the environment)
+#c (the variation explained by the environment alone)
+#d (the unexplained variation).
+Zeta.varpart(Zeta.msgdm(data.spec=gbif_pa,data.env=env_sampled,xy=location_sampled,order=zeta_low))
+Zeta.varpart(Zeta.msgdm(data.spec=gbif_pa,data.env=env_sampled,xy=location_sampled,order=zeta_high))
+
+#Test how zeta diversity declines under different FHSZ categories
+zeta_fhsz <- c()
+i <- 1
+zeta_max <- 10
+for(fhsz_selected in unique(FHSZ_filtered$FHSZ)){
+  #Create a presence/absence data table.
+  taxa_count <- FHSZ_filtered[FHSZ_filtered$FHSZ==fhsz_selected,c("sampleid","taxonKey")]
+  taxa_count <- taxa_count[!duplicated(taxa_count),]
+  taxa_count <- taxa_count %>%
+    dplyr::group_by(sampleid, taxonKey) %>%
+    dplyr::mutate(taxonCount = n()) %>%
+    ungroup()
+  taxa_count <- taxa_count[!duplicated(taxa_count),]
+  gbif_pa <- taxa_count %>%
+    pivot_wider(
+      names_from = taxonKey,
+      values_from = taxonCount,
+      values_fill = 0   # fill missing combinations with 0 (or NA if you prefer)
+    )
+  gbif_pa <- data.frame(gbif_pa)
+  rownames(gbif_pa) <- gbif_pa$sampleid
+  gbif_pa$sampleid <- NULL
+  
+  #Store zeta decline results comparing against WUI values
+  tmp <- data.frame(matrix(nrow=1,ncol=3))
+  colnames(tmp) <- c("FHSZ","EXP_AIC","PL_AIC")
+  #Store AIC scores for power-law and exponential models of zeta diversity decline
+  tmp$FHSZ <- fhsz_selected
+  if(nrow(gbif_pa) > zeta_max){
+    tmp$EXP_AIC <- Zeta.decline.ex(data.spec=gbif_pa,orders=1:zeta_max)$aic[1,"AIC"]
+    tmp$PL_AIC <- Zeta.decline.ex(data.spec=gbif_pa,orders=1:zeta_max)$aic[2,"AIC"]
+  } else{
+    tmp$EXP_AIC <- NA
+    tmp$PL_AIC <- NA
+  }
+  zeta_fhsz[[i]] <- tmp
+  i <- i+1
+}
+zeta_fhsz <- rbindlist(zeta_fhsz)
+
+#Estimate richness against FHSZ.  The FHSZ categories correspond to:
+#1  Moderate. Lower level of wildfire hazard relative to other zones but still subject to wildfire behavior conditions.
+#2	High. Elevated fire hazard due to fuels, terrain, and fire weather conditions.
+#3	Very High. Highest level of wildfire hazard; areas most prone to wildfire spread and intensity.
+FHSZ_richness <- c()
+i <- 1
+for(FHSZ_selected in unique(FHSZ_filtered$FHSZ)){
+  #Create species frequency by sample table
+  taxa_count <- data.frame(table(FHSZ_filtered[FHSZ_filtered$FHSZ==FHSZ_selected,c("sampleid","taxonKey")]))
+  taxa_count <- taxa_count[taxa_count$Freq>0,]
+  #Get richness by sample
+  for(sample_selected in unique(taxa_count$sampleid)){
+    sample_count <- taxa_count[taxa_count$sampleid==sample_selected,]
+    #Estimate alpha diversity metrics
+    result <- iNEXT(sample_count$Freq, q = 0, datatype = "abundance")$AsyEst
+    tmp <- data.frame(matrix(nrow=1,ncol=3))
+    colnames(tmp) <- c("FHSZ","sampleid","richness")
+    tmp$FHSZ <- FHSZ_selected
+    tmp$sampleid <- sample_selected
+    tmp$richness <- result[rownames(result)=="Species Richness","Estimator"]
+    FHSZ_richness[[i]] <- tmp
+    i <- i+1
+  }
+}
+FHSZ_richness <- rbindlist(FHSZ_richness)
+
+#Plot richness against FHSZ
+ggplot(FHSZ_richness, aes(x = as.factor(FHSZ), y = richness))+
+  labs(x = "FHSZ category", y = "Estimated richness")+
+  geom_violin()
+kruskal.test(FHSZ_richness$richness,FHSZ_richness$FHSZ,na.action="na.omit")
+
+#Test how zeta diversity declines under different WHP categories
+zeta_whp <- c()
+i <- 1
+zeta_max <- 10
+for(whp_selected in unique(FHSZ_filtered$WHP)){
+  #Create a presence/absence data table.
+  taxa_count <- FHSZ_filtered[FHSZ_filtered$WHP==whp_selected,c("sampleid","taxonKey")]
+  taxa_count <- taxa_count[!duplicated(taxa_count),]
+  taxa_count <- taxa_count %>%
+    dplyr::group_by(sampleid, taxonKey) %>%
+    dplyr::mutate(taxonCount = n()) %>%
+    ungroup()
+  taxa_count <- taxa_count[!duplicated(taxa_count),]
+  gbif_pa <- taxa_count %>%
+    pivot_wider(
+      names_from = taxonKey,
+      values_from = taxonCount,
+      values_fill = 0   # fill missing combinations with 0 (or NA if you prefer)
+    )
+  gbif_pa <- data.frame(gbif_pa)
+  rownames(gbif_pa) <- gbif_pa$sampleid
+  gbif_pa$sampleid <- NULL
+  
+  #Store zeta decline results comparing against WUI values
+  tmp <- data.frame(matrix(nrow=1,ncol=3))
+  colnames(tmp) <- c("WHP","EXP_AIC","PL_AIC")
+  #Store AIC scores for power-law and exponential models of zeta diversity decline
+  tmp$WHP <- whp_selected
+  if(nrow(gbif_pa) > zeta_max){
+    tmp$EXP_AIC <- Zeta.decline.ex(data.spec=gbif_pa,orders=1:zeta_max)$aic[1,"AIC"]
+    tmp$PL_AIC <- Zeta.decline.ex(data.spec=gbif_pa,orders=1:zeta_max)$aic[2,"AIC"]
+  } else{
+    tmp$EXP_AIC <- NA
+    tmp$PL_AIC <- NA
+  }
+  zeta_whp[[i]] <- tmp
+  i <- i+1
+}
+zeta_whp <- rbindlist(zeta_whp)
+
+#Estimate richness against WHP.
+WHP_richness <- c()
+i <- 1
+for(WHP_selected in unique(FHSZ_filtered$WHP)){
+  #Create species frequency by sample table
+  taxa_count <- data.frame(table(FHSZ_filtered[FHSZ_filtered$WHP==WHP_selected,c("sampleid","taxonKey")]))
+  taxa_count <- taxa_count[taxa_count$Freq>0,]
+  #Get richness by sample
+  for(sample_selected in unique(taxa_count$sampleid)){
+    sample_count <- taxa_count[taxa_count$sampleid==sample_selected,]
+    #Estimate alpha diversity metrics
+    result <- iNEXT(sample_count$Freq, q = 0, datatype = "abundance")$AsyEst
+    tmp <- data.frame(matrix(nrow=1,ncol=3))
+    colnames(tmp) <- c("WHP","sampleid","richness")
+    tmp$WHP <- WHP_selected
+    tmp$sampleid <- sample_selected
+    tmp$richness <- result[rownames(result)=="Species Richness","Estimator"]
+    WHP_richness[[i]] <- tmp
+    i <- i+1
+  }
+}
+WHP_richness <- rbindlist(WHP_richness)
+
+#Plot richness against WHP
+ggplot(WHP_richness, aes(x = WHP, y = richness))+
+  labs(x = "WHP", y = "Estimated richness")+
+  geom_point() + geom_smooth(method = "lm", se = TRUE, color = "blue")
+cor.test(WHP_richness$richness,WHP_richness$WHP,method="spearman")
 
 #Get Wildland Urban Interface raster of North America from https://geoserver.silvis.forest.wisc.edu/geodata/globalwui/NA.zip
 #Obtain just the portion of the data from the Eaton fire.
@@ -74,7 +291,7 @@ WUI_spatial[, sampleid := .GRP, by = .(eventDate,decimalLongitude,decimalLatitud
 #Remove sites without WUI values.
 WUI_spatial <- WUI_spatial[!is.na(WUI_spatial$WUI),]
 #Remove undersampled sites
-n_threshold <- 100
+n_threshold <- 20
 WUI_filtered <- WUI_spatial %>%
   group_by(sampleid) %>%
   filter(n() >= n_threshold) %>%
@@ -169,29 +386,33 @@ zeta_wui <- rbindlist(zeta_wui)
 #6	Non-WUI: Grassland-dominated — grassland not in WUI. 
 #7	Non-WUI: Urban — built/urban land not in a WUI context. 
 #8	Non-WUI: Other — other land types (e.g., water, bare land) outside WUI definitions.
-WUI_chao1 <- c()
+WUI_richness <- c()
 i <- 1
-for(WUI_selected in unique(WUI_spatial$WUI)){
-  #Create a presence/absence data table.
-  taxa_count <- WUI_spatial[WUI_spatial$WUI==WUI_selected,c("sampleid","taxonKey")]
-  taxa_count <- taxa_count[!duplicated(taxa_count),]
-  taxa_count <- taxa_count %>%
-    dplyr::group_by(sampleid, taxonKey) %>%
-    dplyr::mutate(taxonCount = n()) %>%
-    ungroup()
-  taxa_count <- taxa_count[!duplicated(taxa_count),]
-  gbif_pa <- taxa_count %>%
-    pivot_wider(
-      names_from = sampleid,
-      values_from = taxonCount,
-      values_fill = 0   # fill missing combinations with 0 (or NA if you prefer)
-    )
-  gbif_pa$taxonKey <- NULL
-  tmp <- data.frame(matrix(nrow=1,ncol=2))
-  colnames(tmp) <- c("WUI","chao1")
-  tmp$WUI <- WUI_selected
-  tmp$chao1 <- chao1(gbif_pa, taxa.row = TRUE)
-  WUI_chao1[[i]] <- tmp
-  i <- i+1
+for(WUI_selected in unique(WUI_filtered$WUI)){
+  #Create species frequency by sample table
+  taxa_count <- data.frame(table(WUI_filtered[WUI_filtered$WUI==WUI_selected,c("sampleid","taxonKey")]))
+  taxa_count <- taxa_count[taxa_count$Freq>0,]
+  #Get richness by sample
+  for(sample_selected in unique(taxa_count$sampleid)){
+    sample_count <- taxa_count[taxa_count$sampleid==sample_selected,]
+    #Estimate alpha diversity metrics
+    result <- iNEXT(sample_count$Freq, q = 0, datatype = "abundance")$AsyEst
+    tmp <- data.frame(matrix(nrow=1,ncol=3))
+    colnames(tmp) <- c("WUI","sampleid","richness")
+    tmp$WUI <- WUI_selected
+    tmp$sampleid <- sample_selected
+    tmp$richness <- result[rownames(result)=="Species Richness","Estimator"]
+    WUI_richness[[i]] <- tmp
+    i <- i+1
+  }
 }
-WUI_chao1 <- rbindlist(WUI_chao1)
+WUI_richness <- rbindlist(WUI_richness)
+WUI_richness %>%
+  group_by(WUI) %>%
+  summarise(across(richness, mean, na.rm = TRUE))
+
+#Plot richness against WUI
+ggplot(WUI_richness, aes(x = as.factor(WUI), y = richness))+
+  labs(x = "WUI category", y = "Estimated richness")+
+  geom_violin()
+kruskal.test(WUI_richness$richness,WUI_richness$WUI)
