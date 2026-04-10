@@ -15,7 +15,7 @@ require(plyr)
 set.seed(1)
 
 #Set working directory
-wd <- "/Users/levisimons/Desktop/Ecology"
+wd <- ""
 setwd(wd)
 
 #Set sf settings to reduce risk of errors
