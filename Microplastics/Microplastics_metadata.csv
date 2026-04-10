@@ -1,0 +1,193 @@
+﻿Environment,Media,System,Site,Site-Event-Code,Latitude,Longitude,Sample ID,MP Concentration,Concentration Units,Sample Volume (m3),Sample Collection Date,Discharge (cms)
+River,Water,Santa Ana Delhi,SAD,SAD-BF-4,33.659855, -117.881293,SAD-BF-4-N-1,NA,NA,NA,2/21/22,0.067960433
+River,Water,Santa Ana Delhi,SAD,SAD-BF-4,33.659855, -117.881293,SAD-BF-4-N-2,15.83729987,count/m3,23.11,2/21/22,0.067960433
+River,Water,Santa Ana Delhi,SAD,SAD-BF-4,33.659855, -117.881293,SAD-BF-4-N-3,NA,NA,NA,2/21/22,0.067960433
+River,Water,Santa Ana Delhi,SAD,SAD-DF-1,33.659855, -117.881293,SAD-DF-1-N-1,NA,NA,NA,6/21/21,0.101940649
+River,Water,Santa Ana Delhi,SAD,SAD-DF-1,33.659855, -117.881293,SAD-DF-1-N-2,9.797866367,count/m3,35.62,6/21/21,0.101940649
+River,Water,Santa Ana Delhi,SAD,SAD-DF-1,33.659855, -117.881293,SAD-DF-1-N-3,NA,NA,NA,6/21/21,0.101940649
+River,Water,Santa Ana Delhi,SAD,SAD-DF-2,33.659855, -117.881293,SAD-DF-2-N-1,NA,NA,NA,7/19/21,0.053802009
+River,Water,Santa Ana Delhi,SAD,SAD-DF-2,33.659855, -117.881293,SAD-DF-2-N-2,17.62991744,count/m3,20.59,7/19/21,0.053802009
+River,Water,Santa Ana Delhi,SAD,SAD-DF-2,33.659855, -117.881293,SAD-DF-2-N-3,NA,NA,NA,7/19/21,0.053802009
+River,Water,Santa Ana Delhi,SAD,SAD-DF-3,33.659855, -117.881293,SAD-DF-3-N_S,40.06805615,count/m3,23.51,9/2/21,0.116099073
+River,Water,Santa Ana Delhi,SAD,SAD-SF-1,33.659855, -117.881293,SAD-SF-1-N-1,NA,NA,NA,1/23/21,1.019406492
+River,Water,Santa Ana Delhi,SAD,SAD-SF-1,33.659855, -117.881293,SAD-SF-1-N-2,1179.497908,count/m3,23.9,1/23/21,1.019406492
+River,Water,Santa Ana Delhi,SAD,SAD-SF-1,33.659855, -117.881293,SAD-SF-1-N-3,NA,NA,NA,1/23/21,1.019406492
+River,Water,Santa Ana Delhi,SAD,SAD-SF-2,33.659855, -117.881293,SAD-SF-2-N-1,NA,NA,NA,1/28/21,10.10911438
+River,Water,Santa Ana Delhi,SAD,SAD-SF-2,33.659855, -117.881293,SAD-SF-2-N-2,10365.90909,count/m3,0.44,1/28/21,10.10911438
+River,Water,Santa Ana Delhi,SAD,SAD-SF-2,33.659855, -117.881293,SAD-SF-2-N-3,NA,NA,NA,1/28/21,10.10911438
+River,Water,Santa Ana Delhi,SAD,SAD-SF-2,33.659855, -117.881293,SAD-SF-2-N_S,NA,NA,NA,1/28/21,10.10911438
+River,Water,Santa Ana Delhi,SAD,SAD-SF-4,33.659855, -117.881293,SAD-SF-4-N-1,NA,NA,NA,3/10/21,7.36238022
+River,Water,Santa Ana Delhi,SAD,SAD-SF-4,33.659855, -117.881293,SAD-SF-4-N-2,19424.24242,count/m3,1.65,3/10/21,7.36238022
+River,Water,Santa Ana Delhi,SAD,SAD-SF-4,33.659855, -117.881293,SAD-SF-4-N-3,NA,NA,NA,3/10/21,7.36238022
+River,Water,Santa Ana Delhi,SAD,SAD-SF-6,33.659855, -117.881293,SAD-SF-6-N-1,NA,NA,NA,3/28/22,9.231292122
+River,Water,Santa Ana Delhi,SAD,SAD-SF-6,33.659855, -117.881293,SAD-SF-6-N-2,25228.3105,count/m3,4.38,3/28/22,9.231292122
+River,Water,Santa Ana Delhi,SAD,SAD-SF-6,33.659855, -117.881293,SAD-SF-6-N-3,NA,NA,NA,3/28/22,9.231292122
+River,Water,San Diego Creek,SDC,SDC-BF-1,33.655444,-117.845421,SDC-BF-1-N-1,NA,NA,NA,1/18/21,0.139035719
+River,Water,San Diego Creek,SDC,SDC-BF-1,33.655444,-117.845421,SDC-BF-1-N-2,4.167758847,count/m3,38.15,1/18/21,0.139035719
+River,Water,San Diego Creek,SDC,SDC-BF-1,33.655444,-117.845421,SDC-BF-1-N-3,NA,NA,NA,1/18/21,0.139035719
+River,Water,San Diego Creek,SDC,SDC-BF-2,33.655444,-117.845421,SDC-BF-2-N-1,NA,NA,NA,2/13/21,0.188873369
+River,Water,San Diego Creek,SDC,SDC-BF-2,33.655444,-117.845421,SDC-BF-2-N-2,4.628052243,count/m3,105.66,2/13/21,0.188873369
+River,Water,San Diego Creek,SDC,SDC-BF-2,33.655444,-117.845421,SDC-BF-2-N-3,NA,NA,NA,2/13/21,0.188873369
+River,Water,San Diego Creek,SDC,SDC-BF-3,33.655444,-117.845421,SDC-BF-3-N-1,NA,NA,NA,4/16/21,0.113267388
+River,Water,San Diego Creek,SDC,SDC-BF-3,33.655444,-117.845421,SDC-BF-3-N-2,12.44813278,count/m3,38.56,4/16/21,0.113267388
+River,Water,San Diego Creek,SDC,SDC-BF-3,33.655444,-117.845421,SDC-BF-3-N-3,NA,NA,NA,4/16/21,0.113267388
+River,Water,San Diego Creek,SDC,SDC-BF-4,33.655444,-117.845421,SDC-BF-4-N-1,NA,NA,NA,2/21/22,0.197368424
+River,Water,San Diego Creek,SDC,SDC-BF-4,33.655444,-117.845421,SDC-BF-4-N-2,3.563992652,count/m3,81.65,2/21/22,0.197368424
+River,Water,San Diego Creek,SDC,SDC-BF-4,33.655444,-117.845421,SDC-BF-4-N-3,NA,NA,NA,2/21/22,0.197368424
+River,Water,San Diego Creek,SDC,SDC-DF-1,33.655444,-117.845421,SDC-DF-1-N-1,NA,NA,NA,6/21/21,0.146114931
+River,Water,San Diego Creek,SDC,SDC-DF-1,33.655444,-117.845421,SDC-DF-1-N-2,2.251172486,count/m3,95.95,6/21/21,0.146114931
+River,Water,San Diego Creek,SDC,SDC-DF-1,33.655444,-117.845421,SDC-DF-1-N-3,NA,NA,NA,6/21/21,0.146114931
+River,Water,San Diego Creek,SDC,SDC-DF-2,33.655444,-117.845421,SDC-DF-2-N-1,NA,NA,NA,7/19/21,0.086083215
+River,Water,San Diego Creek,SDC,SDC-DF-2,33.655444,-117.845421,SDC-DF-2-N-2,4.575471698,count/m3,63.6,7/19/21,0.086083215
+River,Water,San Diego Creek,SDC,SDC-DF-2,33.655444,-117.845421,SDC-DF-2-N-3,NA,NA,NA,7/19/21,0.086083215
+River,Water,San Diego Creek,SDC,SDC-DF-3,33.655444,-117.845421,SDC-DF-3-N_S,5.213588967,count/m3,29.73,9/2/21,0.054934683
+River,Water,San Diego Creek,SDC,SDC-SF-2,33.655444,-117.845421,SDC-SF-2-N-1,NA,NA,NA,1/29/21,16.70693973
+River,Water,San Diego Creek,SDC,SDC-SF-2,33.655444,-117.845421,SDC-SF-2-N-2,3407.222222,count/m3,1.8,1/29/21,16.70693973
+River,Water,San Diego Creek,SDC,SDC-SF-2,33.655444,-117.845421,SDC-SF-2-N-3,NA,NA,NA,1/29/21,16.70693973
+River,Water,San Diego Creek,SDC,SDC-SF-2,33.655444,-117.845421,SDC-SF-2-N-4,NA,NA,NA,1/29/21,16.70693973
+River,Water,San Diego Creek,SDC,SDC-SF-3,33.655444,-117.845421,SDC-SF-3-N-1,NA,NA,NA,3/3/21,14.75307729
+River,Water,San Diego Creek,SDC,SDC-SF-3,33.655444,-117.845421,SDC-SF-3-N-2,1405.415162,count/m3,11.08,3/3/21,14.75307729
+River,Water,San Diego Creek,SDC,SDC-SF-3,33.655444,-117.845421,SDC-SF-3-N-3,NA,NA,NA,3/3/21,14.75307729
+River,Water,San Diego Creek,SDC,SDC-SF-3,33.655444,-117.845421,SDC-SF-3-N-4,NA,NA,NA,3/3/21,14.75307729
+River,Water,San Diego Creek,SDC,SDC-SF-3,33.655444,-117.845421,SDC-SF-3-N_S,NA,NA,NA,3/3/21,14.75307729
+River,Water,San Diego Creek,SDC,SDC-SF-4,33.655444,-117.845421,SDC-SF-4-N-1,NA,NA,NA,3/10/21,21.83228904
+River,Water,San Diego Creek,SDC,SDC-SF-4,33.655444,-117.845421,SDC-SF-4-N-2,2632.829374,count/m3,4.63,3/10/21,21.83228904
+River,Water,San Diego Creek,SDC,SDC-SF-4,33.655444,-117.845421,SDC-SF-4-N-3,NA,NA,NA,3/10/21,21.83228904
+River,Water,San Diego Creek,SDC,SDC-SF-4,33.655444,-117.845421,SDC-SF-4-N-4,NA,NA,NA,3/10/21,21.83228904
+River,Water,San Diego Creek,SDC,SDC-SF-5,33.655444,-117.845421,SDC-SF-5-N-1,NA,NA,NA,3/15/21,0.643641932
+River,Water,San Diego Creek,SDC,SDC-SF-5,33.655444,-117.845421,SDC-SF-5-N-2,31.61189358,count/m3,6.39,3/15/21,0.643641932
+River,Water,San Diego Creek,SDC,SDC-SF-5,33.655444,-117.845421,SDC-SF-5-N-3,NA,NA,NA,3/15/21,0.643641932
+River,Water,San Diego Creek,SDC,SDC-SF-6,33.655444,-117.845421,SDC-SF-6-N-1,NA,NA,NA,3/28/22,16.48040495
+River,Water,San Diego Creek,SDC,SDC-SF-6,33.655444,-117.845421,SDC-SF-6-N-2,1302.367942,count/m3,16.47,3/28/22,16.48040495
+River,Water,San Diego Creek,SDC,SDC-SF-6,33.655444,-117.845421,SDC-SF-6-N-3,NA,NA,NA,3/28/22,16.48040495
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-2,33.650444,-117.869573,SUB-1-2-S1,7.95774,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-3,33.650196,-117.868073,SUB-1-3-S1,3.37487,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-4,33.648807,-117.868731,SUB-1-4-S1,2.04086,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-5,33.649724,-117.871620,SUB-1-5-S1,5.00413,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-6,33.648768,-117.872276,SUB-1-6-S1,3.68558,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin I/III,SUB-1-7,33.648966,-117.870440,SUB-1-7-S1,2.09584,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-1,33.646377,-117.884951,SUB-2-1-S1,2.8223,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-2,33.645834,-117.886355,SUB-2-2-S1,16.71763,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-3,33.646251,-117.886357,SUB-2-3-S1,18.8825,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-4,33.644638,-117.886906,SUB-2-4-S1,4.51018,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-5,33.645288,-117.888464,SUB-2-5-S1,2.9026,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Basin II,SUB-2-6,33.643454,-117.887943,SUB-2-6-S1,2.41901,count/m3,NA,10/6/21,NA
+Estuary,Sediment,Newport Bay (Subtidal),Middle Newport Bay,SUB-3-3,33.631417,-117.886417,SUB-3-3-S1,2.52135,count/m3,NA,2/16/24,NA
+Estuary,Sediment,Newport Bay (Subtidal),Middle Newport Bay,SUB-3-6,33.620722,-117.901056,SUB-3-6-S1,1.00956,count/m3,NA,2/16/24,NA
+Estuary,Sediment,Newport Bay (Subtidal),Middle Newport Bay,SUB-3-7,33.619056,-117.903333,SUB-3-7-S1,2.02956,count/m3,NA,2/16/24,NA
+Estuary,Sediment,Newport Bay (Subtidal),Middle Newport Bay,SUB-3-9,33.628611,-117.885611,SUB-3-9-S1,3.30833,count/m3,NA,2/16/24,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-1,33.615736,-117.905901,SUB-4-1-S1,6.77316,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-10,33.608833,-117.913883,SUB-4-10-S1,2.04778,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-10,33.608833,-117.913883,SUB-4-10-S2,1.90831,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-11,33.608400,-117.906633,SUB-4-11-S1,3.21551,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-2,33.610878,-117.907060,SUB-4-2-S1,2.72447,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-4,33.605372,-117.900098,SUB-4-4-S1,1.63744,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-5,33.609205,-117.888602,SUB-4-5-S1,1.75593,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-7,33.615200,-117.916283,SUB-4-7-S1,2.71018,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-7,33.615200,-117.916283,SUB-4-7-S2,2.19165,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-9,33.617750,-117.924300,SUB-4-9-S1,3.40733,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Subtidal),Lower Harbor,SUB-4-9,33.617750,-117.924300,SUB-4-9-S2,3.85476,count/m3,NA,10/11/23,NA
+Estuary,Sediment,Newport Bay (Intertidal),Upper Newport Bay,UNB-1,33.651670,-117.881355,UNB-1,0.486899461,count/m3,NA,9/19/21,NA
+Estuary,Sediment,Newport Bay (Intertidal),Upper Newport Bay,UNB-2,33.650289,-117.881915,UNB-2,2.073175565,count/m3,NA,9/19/21,NA
+Estuary,Sediment,Newport Bay (Intertidal),Upper Newport Bay,UNB-3,33.648395,-117.884765,UNB-3,1.531488561,count/m3,NA,9/19/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-dry,33.654967,-118.029333,HC-H1-Bongo-dry,0.193732397,count/m3,629.7346341,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-wet,33.654967,-118.029333,HC-H1-Bongo-wet,0.410463605,count/m3,450.7098745,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-dry,33.654967,-118.029333,HC-H1-Epibenthic-dry,0.04503796,count/m3,399.6628657,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-wet,33.654967,-118.029333,HC-H1-Epibenthic-wet,0.370284707,count/m3,24.30562166,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-dry,33.654967,-118.029333,HC-H1-Manta-dry,2.916381185,count/m3,109.0392441,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),HC-H1,HC-H1-wet,33.654967,-118.029333,HC-H1-Manta-wet,0.277193961,count/m3,108.2274659,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-dry,33.551317,-118.099767,HS-H3-Bongo-dry,0.313943771,count/m3,745.356403,9/24/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-wet,33.551317,-118.099767,HS-H3-Bongo-wet,0.59282546,count/m3,300.25701,3/19/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-dry,33.551317,-118.099767,HS-H3-Epibenthic-dry,0.470418385,count/m3,129.6718027,9/24/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-wet,33.551317,-118.099767,HS-H3-Epibenthic-wet,0.090801648,count/m3,165.1952393,3/19/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-dry,33.551317,-118.099767,HS-H3-Manta-dry,0.691518063,count/m3,141.7171947,9/24/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HS-H3,HS-H3-wet,33.551317,-118.099767,HS-H3-Manta-wet,3.711677972,count/m3,59.81122329,3/19/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-dry,33.592900,-118.061883,HSB-H2-Bongo-dry,0.114179127,count/m3,648.1044478,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-wet,33.592900,-118.061883,HSB-H2-Bongo-wet,0.366525405,count/m3,360.1387471,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-dry,33.592900,-118.061883,HSB-H2-Epibenthic-dry,0.1001619,count/m3,119.8060342,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-wet,33.592900,-118.061883,HSB-H2-Epibenthic-wet,0.984255979,count/m3,70.10371432,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-dry,33.592900,-118.061883,HSB-H2-Manta-dry,0.410334846,count/m3,165.7183168,9/25/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-wet,33.592900,-118.061883,HSB-H2-Manta-wet,0.79600483,count/m3,175.8783299,3/20/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-dry,33.753733,-118.176533,LA-SP1-Bongo-dry,1.381992922,count/m3,630.9728409,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-wet,33.753733,-118.176533,LA-SP1-Bongo-wet,0.419005956,count/m3,997.5991856,3/12/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-dry,33.753733,-118.176533,LA-SP1-Epibenthic-dry,2.643121854,count/m3,290.9438318,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-wet,33.753733,-118.176533,LA-SP1-Epibenthic-wet,2.946286683,count/m3,139.1582164,3/12/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-dry,33.753733,-118.176533,LA-SP1-Manta-dry,4.351955571,count/m3,206.8035818,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-wet,33.753733,-118.176533,LA-SP1-Manta-wet,1.798271177,count/m3,205.7531727,3/12/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-dry,33.707500,-118.190683,MSPB-SP3-Bongo-dry,0.14395891,count/m3,618.2319674,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-wet,33.707500,-118.190683,MSPB-SP3-Bongo-wet,0.262018017,count/m3,335.8547669,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-dry,33.707500,-118.190683,MSPB-SP3-Epibenthic-dry,0.383494544,count/m3,315.5194822,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-wet,33.707500,-118.190683,MSPB-SP3-Epibenthic-wet,0.033238026,count/m3,240.688181,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-dry,33.707500,-118.190683,MSPB-SP3-Manta-dry,1.034383696,count/m3,206.8864783,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-wet,33.707500,-118.190683,MSPB-SP3-Manta-wet,0.24215932,count/m3,90.84928067,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-dry,33.648267,-118.260300,OSPB-SP4-Bongo-dry,0.483427766,count/m3,539.8945171,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-wet,33.648267,-118.260300,OSPB-SP4-Bongo-wet,0.175832883,count/m3,420.8541588,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-dry,33.648267,-118.260300,OSPB-SP4-Epibenthic-dry,0.320461241,count/m3,112.3380782,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-wet,33.648267,-118.260300,OSPB-SP4-Epibenthic-wet,0.246092221,count/m3,101.5879327,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-dry,33.648267,-118.260300,OSPB-SP4-Manta-dry,0,count/m3,121.7816051,9/11/21,NA
+Ocean,Water,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-wet,33.648267,-118.260300,OSPB-SP4-Manta-wet,0.581680354,count/m3,134.0942659,3/13/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-dry,33.731900,-118.122350,SG-SP2-Bongo-dry,0.448481921,count/m3,461.5570668,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-wet,33.731900,-118.122350,SG-SP2-Bongo-wet,2.135837325,count/m3,468.2004516,3/12/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-dry,33.731900,-118.122350,SG-SP2-Epibenthic-dry,0.71562158,count/m3,303.2328904,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-wet,33.731900,-118.122350,SG-SP2-Epibenthic-wet,1.158461297,count/m3,145.0199505,3/12/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-dry,33.731900,-118.122350,SG-SP2-Manta-dry,8.710700234,count/m3,82.88656257,9/10/21,NA
+Ocean,Water,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-wet,33.731900,-118.122350,SG-SP2-Manta-wet,1.199049141,count/m3,78.39545253,3/12/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),HC-H1,HC-H1-dry,33.654967,-118.029333,HC-H1-Sediment-dry,99.96539357,count/kg dry sediment,NA,9/25/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),HC-H1,HC-H1-wet,33.654967,-118.029333,HC-H1-Sediment-wet,414.467109,count/kg dry sediment,NA,3/20/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),HS-H3,HS-H3-dry,33.551317,-118.099767,HS-H3-Sediment-dry,999.4872224,count/kg dry sediment,NA,9/24/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),HS-H3,HS-H3-wet,33.551317,-118.099767,HS-H3-Sediment-wet,194.6429147,count/kg dry sediment,NA,3/19/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-dry,33.592900,-118.061883,HSB-H2-Sediment-dry,899.3866378,count/kg dry sediment,NA,9/25/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),HSB-H2,HSB-H2-wet,33.592900,-118.061883,HSB-H2-Sediment-wet,464.1793196,count/kg dry sediment,NA,3/20/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-dry,33.753733,-118.176533,LA-SP1-Sediment-dry,1348.557117,count/kg dry sediment,NA,9/10/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),LA-SP1,LA-SP1-wet,33.753733,-118.176533,LA-SP1-Sediment-wet,3171.987929,count/kg dry sediment,NA,3/12/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-dry,33.707500,-118.190683,MSPB-SP3-Sediment-dry,199.3024922,count/kg dry sediment,NA,9/11/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),MSPB-SP3,MSPB-SP3-wet,33.707500,-118.190683,MSPB-SP3-Sediment-wet,63.45840188,count/kg dry sediment,NA,3/13/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-dry,33.648267,-118.260300,OSPB-SP4-Sediment-dry,328.3894073,count/kg dry sediment,NA,9/11/21,NA
+Ocean,Sediment,San Pedro Shelf (Offshore),OSPB-SP4,OSPB-SP4-wet,33.648267,-118.260300,OSPB-SP4-Sediment-wet,179.8677612,count/kg dry sediment,NA,3/13/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-dry,33.731900,-118.122350,SG-SP2-Sediment-dry,695.7521143,count/kg dry sediment,NA,9/10/21,NA
+Ocean,Sediment,San Pedro Shelf (Nearshore),SG-SP2,SG-SP2-wet,33.731900,-118.122350,SG-SP2-Sediment-wet,881.5950444,count/kg dry sediment,NA,3/12/21,NA
+River,Water,Los Angeles River,LA,LA_DF_1,33.820692,-118.205539,LA_DF_1_N_T,431.5245478,count/m3,15.48,6/21/21,1.736316013
+River,Water,Los Angeles River,LA,LA_DF_2,33.820692,-118.205539,LA_DF_2_N_T,64.70588235,count/m3,30.6,7/19/21,1.577006938
+River,Water,Los Angeles River,LA,LA_DF_3,33.820692,-118.205539,LA_DF_3_N_T,131.9385543,count/m3,25.4664,9/1/21,1.854155458
+River,Water,Los Angeles River,LA,LA_BF_1,33.820692,-118.205539,LA_BF_1_N_T,49.45286195,count/m3,47.52,1/21/21,2.185416962
+River,Water,Los Angeles River,LA,LA_BF_2,33.820692,-118.205539,LA_BF_2_N_T,147.3094716,count/m3,41.07,2/13/21,2.185416962
+River,Water,Los Angeles River,LA,LA_BF_3,33.820692,-118.205539,LA_BF_3_N_T,28.01780571,count/m3,38.19,4/16/21,2.135947897
+River,Water,Los Angeles River,LA,LA_BF_3,33.820692,-118.205539,LA_BF_3_N_Z,NA,NA,NA,4/16/21,2.135947897
+River,Water,Los Angeles River,LA,LA_SF_1,33.820692,-118.205539,LA_SF_1_N_T,7269.363197,count/m3,0.785488336,1/29/21,228.1093869
+River,Water,Los Angeles River,LA,LA_SF_2,33.820692,-118.205539,LA_SF_2_N_T,6852.478114,count/m3,1.246264469,3/3/21,22.59539856
+River,Water,Los Angeles River,LA,LA_SF_3,33.820692,-118.205539,LA_SF_3_N_T,30166.52116,count/m3,0.841661518,3/15/21,78.52443721
+River,Water,Los Angeles River,LA,LA_SF_4,33.820692,-118.205539,LA_SF_4_N_T,1204.80883,count/m3,1.203510436,10/25/21,266.3448676
+River,Water,Coyote Creek,CC,CC_DF_1,33.803497,-118.084517,CC_DF_1_N_T,265.3508772,count/m3,9.12,6/21/21,0.127042333
+River,Water,Coyote Creek,CC,CC_DF_2,33.803497,-118.084517,CC_DF_2_N_T,272.4867725,count/m3,7.56,7/19/21,0.100920289
+River,Water,Coyote Creek,CC,CC_DF_3,33.803497,-118.084517,CC_DF_3_N_T,58.82352941,count/m3,13.77,9/1/21,0.549388834
+River,Water,Coyote Creek,CC,CC_BF_1,33.803497,-118.084517,CC_BF_1_N_T,451.3888889,count/m3,11.52,1/18/21,0.162976072
+River,Water,Coyote Creek,CC,CC_BF_2,33.803497,-118.084517,CC_BF_2_N_T,104.7619048,count/m3,16.8,2/13/21,0.400226533
+River,Water,Coyote Creek,CC,CC_BF_3,33.803497,-118.084517,CC_BF_3_N_T,110.1190476,count/m3,13.44,4/16/21,0.218688942
+River,Water,Coyote Creek,CC,CC_BF_3,33.803497,-118.084517,CC_BF_3_N_Z,NA,NA,NA,4/16/21,0.218688942
+River,Water,Coyote Creek,CC,CC_SF_1,33.803497,-118.084517,CC_SF_1_N_T,494.3181873,count/m3,45.23402248,1/23/21,9.604813818
+River,Water,Coyote Creek,CC,CC_SF_2,33.803497,-118.084517,CC_SF_2_N_T,139.5741103,count/m3,64.6968122,3/3/21,3.352994478
+River,Water,Coyote Creek,CC,CC_SF_3,33.803497,-118.084517,CC_SF_3_N_T,440.2277642,count/m3,25.80482405,3/15/21,3.272971825
+River,Water,Coyote Creek,CC,CC_SF_4,33.803497,-118.084517,CC_SF_4_N_T,658.4096846,count/m3,19.22814973,8/21/23,3.138892822
+River,Water,San Gabriel River,SG,SG_DF_1,33.804228,-118.090511,SG_DF_1_N_T,25.81908832,count/m3,28.08,6/21/21,0.75364576
+River,Water,San Gabriel River,SG,SG_DF_1,33.804228,-118.090511,SG_DF_1_N_Z,NA,NA,NA,6/21/21,0.75364576
+River,Water,San Gabriel River,SG,SG_DF_2,33.804228,-118.090511,SG_DF_2_N_T,16.32862189,count/m3,1.531053887,7/19/21,2.197895134
+River,Water,San Gabriel River,SG,SG_DF_2,33.804228,-118.090511,SG_DF_2_N_Y,NA,NA,NA,7/19/21,2.197895134
+River,Water,San Gabriel River,SG,SG_DF_2,33.804228,-118.090511,SG_DF_2_N_Z,NA,NA,NA,7/19/21,2.197895134
+River,Water,San Gabriel River,SG,SG_DF_3,33.804228,-118.090511,SG_DF_3_N_T,21.56469507,count/m3,1.530279,9/1/21,1.112721223
+River,Water,San Gabriel River,SG,SG_DF_3,33.804228,-118.090511,SG_DF_3_N_Y,NA,NA,NA,9/1/21,1.112721223
+River,Water,San Gabriel River,SG,SG_DF_3,33.804228,-118.090511,SG_DF_3_N_Z,NA,NA,NA,9/1/21,1.112721223
+River,Water,San Gabriel River,SG,SG_BF_1,33.804228,-118.090511,SG_BF_1_N_T,38.78568971,count/m3,58.14,1/20/21,0.971315305
+River,Water,San Gabriel River,SG,SG_BF_1,33.804228,-118.090511,SG_BF_1_N_Z,NA,NA,NA,1/20/21,0.971315305
+River,Water,San Gabriel River,SG,SG_BF_2,33.804228,-118.090511,SG_BF_2_N_T,25.84315084,count/m3,34.632,2/13/21,0.644183303
+River,Water,San Gabriel River,SG,SG_BF_2,33.804228,-118.090511,SG_BF_2_N_Z,NA,NA,NA,2/13/21,0.644183303
+River,Water,San Gabriel River,SG,SG_BF_3,33.804228,-118.090511,SG_BF_3_N_T,50.99302201,count/m3,14.904,4/16/21,0.745235736
+River,Water,San Gabriel River,SG,SG_BF_3,33.804228,-118.090511,SG_BF_3_N_Z,NA,NA,NA,4/16/21,0.745235736
+River,Water,San Gabriel River,SG,SG_SF_1,34.013639,-118.062997,SG_SF_1_N_T,1353.513903,count/m3,1.100838341,1/29/21,40.23606588
+River,Water,San Gabriel River,SG,SG_SF_1,34.013639,-118.062997,SG_SF_1_N_Z,NA,NA,NA,1/29/21,40.23606588
+River,Water,San Gabriel River,SG,SG_SF_2,34.013639,-118.062997,SG_SF_2_N_T,1249.978389,count/m3,1.196020678,3/10/21,5.647505781
+River,Water,San Gabriel River,SG,SG_SF_2,34.013639,-118.062997,SG_SF_2_N_Z,NA,NA,NA,3/10/21,5.647505781
+River,Water,San Gabriel River,SG,SG_SF_3,34.013639,-118.062997,SG_SF_3_N_T,2037.502585,count/m3,1.519016478,3/28/22,42.93758082
+River,Water,San Gabriel River,SG,SG_SF_3,34.013639,-118.062997,SG_SF_3_N_Z,NA,NA,NA,3/28/22,42.93758082
+River,Water,Santa Ana River,SA,SA_SF_1,33.748894,-117.908825,SA_SF_1_N_T,943.697192,count/m3,6.718256718,3/3/21,1.837746
+River,Water,Santa Ana River,SA,SA_SF_2,33.748894,-117.908825,SA_SF_2_N_T,1936.340194,count/m3,3.55825904,3/10/21,2.077021096
+River,Water,Santa Ana River,SA,SA_SF_3,33.748894,-117.908825,SA_SF_3_N_T,11406.97554,count/m3,1.890071556,3/28/22,1.354948322
