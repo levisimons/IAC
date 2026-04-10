@@ -57,6 +57,7 @@ sample_area <- st_as_sfc(st_bbox(sample_area))
 study_area <- st_as_sf(st_transform(sample_area,crs=4326))
 
 #Read in Eaton fire boundary
+#Stored here: https://github.com/levisimons/IAC/blob/main/Eaton/Eaton_Fire_Perimeter.zip
 Eaton <- st_read("Eaton_Perimeter_20250121.shp")
 
 #Set CRS
